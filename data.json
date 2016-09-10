@@ -1,0 +1,42 @@
+[
+  {
+    "title":"swim makeup class",
+    "location":"waterworks aquatics",
+    "start_date":"2016-09-01",
+    "start_time":"6:40PM",
+    "end_date":"2016-09-01",
+    "end_time":"7:00PM",
+    "notes":,
+    "tag":"ishika"
+  },
+  {
+    "title":"picture day",
+    "location":"price middle school",
+    "start_date":"2016-09-02",
+    "start_time":"9:00AM",
+    "end_date":"2016-09-01",
+    "end_time":"10:00AM",
+    "notes":,
+    "tag":"tarika"
+  },
+  {
+    "title":"get-together",
+    "location":"our place",
+    "start_date":"2016-09-04",
+    "start_time":"6:30PM",
+    "end_date":"2016-09-01",
+    "end_time":"9:00PM",
+    "notes":,
+    "tag":"family"
+  },
+  {
+    "title":"back to school",
+    "location":"fammatre elementary",
+    "start_date":"2016-09-07",
+    "start_time":"7:00PM",
+    "end_date":"2016-09-01",
+    "end_time":"8:00PM",
+    "notes":,
+    "tag":"ishika"
+  }
+]
