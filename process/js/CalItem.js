@@ -2,7 +2,7 @@ var React = require('react');
 
 var CalItem = React.createClass({
   handleDelete: function() {
-    this.props.onDelete(this.props.whichItem)
+    this.props.onDelete(this.props.itemId);
   },
 
   render: function() {
@@ -21,5 +21,6 @@ var CalItem = React.createClass({
     )
   }
 })
+// <div onClick={handleClick.bind(this, i, props)} key={i}>{item}</div>
 
 module.exports = CalItem;

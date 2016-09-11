@@ -5,22 +5,19 @@ var CalItem = require('./CalItem')
 
 var CalDay = React.createClass({
   componentWillReceiveProps: function(thisProps) {
-    console.log("props in componentWillReceiveProps= "+ JSON.stringify(thisProps));
+    // setting the state of day's items here, so handleDelete can be implemented here and not
+    // have to propogate all the way up the hierarchy
     this.setState({
       todayItems: thisProps.dayItems
     });
   },
 
-  deleteApptItem: function(item){
-console.log("have to delete item ", item);
-
+  deleteApptItem: function(k){
     var allDayApts = this.state.todayItems;
-    console.log("allDayApts= "+JSON.stringify(allDayApts));
-    var newDayApts = _.without(allDayApts, item);
-    console.log("newDayApts= "+newDayApts);
-    this.setState({
-      todayItems: newDayApts
-    }); //setState
+    _.remove(allDayApts, function(ele){
+      return ele.id == k;
+    })
+    this.setState({ todayItems: allDayApts}); //setState
   },
 
   render: function() {
@@ -31,10 +28,11 @@ console.log("have to delete item ", item);
     
     var items = this.props.dayItems;
     var myDay = items.map( function(ele, index) {
+    var thisKey = this.props.weekNo+"-"+this.props.dow+"-"+index;
       return (
-        <CalItem key={ele.id}
+        <CalItem key={thisKey}
+          itemId={ele.id}
           singleItem={ele} 
-          whichItem={ele} 
           onDelete={this.deleteApptItem} />
       ) //return
     }.bind(this)); //forEach
@@ -43,6 +41,7 @@ console.log("have to delete item ", item);
        <div className="col-1-7">
          <div className="module">
          <div style={{float:'left'}}>{todayDate}</div>
+         <span style={{float:'right'}} className="glyphicon glyphicon-plus-sign"></span>
            {myDay}
          </div>
        </div>

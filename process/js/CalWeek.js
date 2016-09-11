@@ -17,6 +17,8 @@ var CalWeek = React.createClass({
       });
       var props = {
         key : number+"-"+ele,
+        weekNo: number,
+        dow: ele,
         thisDate : (thisDate > lastDate ? null : thisDate++),
         dayItems : filteredWeekItems
       }
